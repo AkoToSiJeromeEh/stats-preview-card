@@ -1,0 +1,183 @@
+/*
+font-family: 'Inter', sans-serif;
+- Weights: 400, 700
+font-family: 'Lexend Deca', sans-serif;
+- Weights: 400 
+
+ */
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1,h2,p,small,ul{
+    margin: 0;
+    padding : 0;
+}
+.Stats-Section{
+    width: 100%;
+    min-height: 100vh;
+    background-color: hsl(233, 47%, 7%);
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+}
+.Stats-Wrapper {
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    margin: auto;
+    width: 80%; 
+  }
+  
+  
+.Stats-Content-Cont{
+    background-color: hsl(244, 38%, 16%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    height: 100%;
+    
+}
+.stats-pads{padding: 5rem;}
+.Stats-Content-Cont > .stats-pads > h1 {
+    animation: 1s toTop ease forwards;
+    font-family: 'Inter', sans-serif;
+    font-size: 2.0rem;
+    font-weight: 700;
+    color: hsl(0, 0%, 100%);
+}
+.Stats-Content-Cont > .stats-pads >  h1  > span {
+    color :  hsl(277, 64%, 61%);
+    animation: 2s changeColor  alternate-reverse infinite;
+}
+.Stats-Content-Cont > .stats-pads > p {
+    animation: 1s toTop ease forwards;
+    padding-block-start: 40px;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    line-height: 25px;
+    color:  hsla(0, 0%, 100%, 0.75);
+}
+.flex-Stats{
+    margin-top: 5rem;
+    animation: 1s toTop ease forwards;
+}
+.flex-Stats > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: flex-end;
+    height: 100%;
+    list-style-type: none;
+
+}
+.flex-Stats > ul > li > h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: hsl(0, 0%, 100%);
+    font-size: 25px;
+    animation: 2s changeColor forwards alternate-reverse infinite;
+    
+}
+.flex-Stats > ul > li {
+    font-family: 'Lexend Deca', sans-serif;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+    font-size: 14px;
+    color: hsla(0, 0%, 100%, 0.6);
+}
+.Stats-Img-Cont > img{
+    vertical-align: middle;
+    mix-blend-mode: multiply;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.Stats-Img-Cont{
+    animation: 1s toBottom ease forwards;
+    width: 100%;
+    height: 100%;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: hsl(277, 64%, 61%);
+}
+@keyframes changeColor {
+    0% {
+      color: hsl(277, 64%, 61%);
+    }
+    50% {
+      color: hsl(309, 93%, 68%);
+    }
+    100% {
+      color: hsl(276, 88%, 69%);
+    }
+  }
+@keyframes toTop {
+    
+    0%{
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+@keyframes toBottom {
+    0%{
+        opacity: 0;
+        transform: translateY(20%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+@media (max-width:900px) {
+    .Stats-Wrapper {
+        grid-template-columns: repeat(1 , 1fr);
+      }
+      .Stats-Img-Cont{
+        margin-top: 20px;
+        order: -2;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 0px;
+      }
+      .Stats-Img-Cont > img{
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 0px;
+    }
+      .Stats-Content-Cont{
+        order: 1;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 0px;
+        text-align: center;
+      }
+      .flex-Stats{ margin-top: 50px; }
+      .flex-Stats > ul{
+        flex-direction: column;
+        line-height: 45px;
+      }
+}
+@media (max-width:374px) {
+    .Stats-Content-Cont {
+        width: 100%;
+        padding: 0;
+    }
+    .Stats-Content-Cont > .stats-pads > h1 {
+
+        font-size: 20px;
+    }
+    .Stats-Content-Cont > .stats-pads > p{
+        font-size: 11px;
+        
+    }
+    .stats-pads{padding: 3rem;}
+}
